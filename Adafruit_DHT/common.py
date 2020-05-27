@@ -47,11 +47,7 @@ def get_platform():
         if version == 1:
             from . import Raspberry_Pi
             return Raspberry_Pi
-        elif version == 2:
-            from . import Raspberry_Pi_2
-            return Raspberry_Pi_2
-        elif version == 3:
-            """Use Pi 2 driver even though running on Pi 3"""
+        elif version >= 2 and version <= 4:
             from . import Raspberry_Pi_2
             return Raspberry_Pi_2
         else:
